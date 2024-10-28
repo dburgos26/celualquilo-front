@@ -25,7 +25,7 @@ export default function Billing() {
     if (phoneJson === null) {
         phoneJson = {
             id: 1,
-            name: "Samsung Galaxy S23",
+            name: "Samsung Galaxy S24",
             brand: "Samsung",
             price_per_day: 10,
             availability: 10,
