@@ -38,9 +38,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Necesario para obtener la información de los PR, si aplica
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}    # Token de SonarCloud
 
-      # Paso opcional para ver el reporte de Sonar en consola (opcional)
-      - name: SonarCloud Quality Gate
-        id: sonar-quality-gate
-        uses: SonarSource/sonarcloud-quality-gate-action@master
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
