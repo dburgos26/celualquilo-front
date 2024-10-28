@@ -1,0 +1,47 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  sonarcloud:
+    name: SonarCloud
+    runs-on: ubuntu-latest
+    steps:
+      # Paso para clonar el repositorio
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Deshabilitar el clone shallow para un mejor análisis
+
+      # Paso para configurar Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Usa la versión de Node.js que necesitas para el proyecto
+
+      # Paso para instalar las dependencias
+      - name: Install dependencies
+        run: npm install
+
+      # Paso para construir el proyecto (si es necesario para el análisis de SonarCloud)
+      - name: Build the project
+        run: npm run build
+
+      # Paso para ejecutar el análisis de SonarCloud
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Necesario para obtener la información de los PR, si aplica
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}    # Token de SonarCloud
+
+      # Paso opcional para ver el reporte de Sonar en consola (opcional)
+      - name: SonarCloud Quality Gate
+        id: sonar-quality-gate
+        uses: SonarSource/sonarcloud-quality-gate-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
