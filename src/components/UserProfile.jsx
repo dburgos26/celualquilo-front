@@ -1,4 +1,3 @@
-import React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -6,7 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { Nav } from 'react-bootstrap';
-import { useEffect } from 'react';
+import { useEffect, React } from 'react';
 import { useIntl } from 'react-intl';
 
 export default function UserProfile() {
@@ -43,12 +42,10 @@ export default function UserProfile() {
     }, []);
 
     const handleActiveReservationsClick = () => {
-        // TODO: See active reservations
         console.log('Feature not implemented yet.');
     };
 
     const handlePastReservationsClick = () => {
-        // TODO: See past reservations
         console.log('Feature not implemented yet.');
     };
 

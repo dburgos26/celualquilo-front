@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React from 'react';
+import { React, useState, useEffect } from 'react';
 import { useIntl } from "react-intl";
 import Grid from '@mui/material/Grid';
 import PhoneCard from './PhoneCard';
@@ -8,7 +8,6 @@ import Typography from '@mui/material/Typography';
 import { Stack } from '@mui/material';
 import Button from '@mui/material/Button';
 import { COLORS } from "../styles/colors";
-import { useState, useEffect } from 'react';
 import FilterSection from './FiltersSection';
 import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
