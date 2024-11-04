@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Box, Checkbox, FormControlLabel, TextField } from '@mui/material';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { ArrowDropDown, ArrowDropUp } from '@mui/icons-material';
+import PropTypes from 'prop-types';
 
 FilterSection.propTypes = {
     filtros: PropTypes.shape({

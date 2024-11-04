@@ -7,6 +7,7 @@ import Box from '@mui/joy/Box';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 PhoneCardSimple.propTypes = {
     name: PropTypes.string.isRequired,

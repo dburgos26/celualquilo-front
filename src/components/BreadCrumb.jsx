@@ -3,6 +3,7 @@ import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 import Toolbar from '@mui/material/Toolbar';
+import PropTypes from 'prop-types';
 
 Breadcrumb.propTypes = {
     breadcrumbs: PropTypes.arrayOf(
