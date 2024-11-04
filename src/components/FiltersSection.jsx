@@ -3,7 +3,21 @@ import React, { useState } from 'react';
 import { Box, Checkbox, FormControlLabel, TextField } from '@mui/material';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { ArrowDropDown, ArrowDropUp } from '@mui/icons-material';
+import PropTypes from 'prop-types';
 
+FilterSection.propTypes = {
+    filtros: PropTypes.shape({
+        PrecioMin: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+        PrecioMax: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+        Marcas: PropTypes.shape({
+            samsung: PropTypes.bool.isRequired,
+            apple: PropTypes.bool.isRequired,
+            huawei: PropTypes.bool.isRequired,
+            xiaomi: PropTypes.bool.isRequired,
+        }).isRequired,
+    }).isRequired,
+    setFiltros: PropTypes.func.isRequired,
+};
 
 function FilterSection({ filtros, setFiltros }) {
     const [mostrarFiltros, setMostrarFiltros] = useState(false);
