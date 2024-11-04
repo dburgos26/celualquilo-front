@@ -74,12 +74,6 @@ const nameStyle = {
     fontWeight: "bold",
 }
 
-LastButton.propTypes = {
-    text: PropTypes.string.isRequired,
-    route: PropTypes.string.isRequired,
-};
-
-
 
 const LastButton = ({ text, route }) => <>
     <Link to={route}>
@@ -98,10 +92,6 @@ const LastButton = ({ text, route }) => <>
 </>
 
 
-MediaRatio.propTypes = {
-    image: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-};
 
 const MediaRatio = ({ image, name }) =>
     <Box sx={{
@@ -119,3 +109,14 @@ const MediaRatio = ({ image, name }) =>
             />
         </AspectRatio>
     </Box>
+
+
+MediaRatio.propTypes = {
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+};
+
+LastButton.propTypes = {
+    text: PropTypes.string.isRequired,
+    route: PropTypes.string.isRequired,
+};
