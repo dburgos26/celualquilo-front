@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { React, useState, useEffect } from 'react';
+import React, {  useState, useEffect } from 'react';
 import { useIntl } from "react-intl";
 import Grid from '@mui/material/Grid';
 import PhoneCard from './PhoneCard';

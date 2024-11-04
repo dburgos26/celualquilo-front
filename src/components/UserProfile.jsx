@@ -1,3 +1,4 @@
+import React, { useEffect  } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -5,7 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { Nav } from 'react-bootstrap';
-import { useEffect, React } from 'react';
+
 import { useIntl } from 'react-intl';
 
 export default function UserProfile() {
