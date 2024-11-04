@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useIntl } from "react-intl";
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
@@ -9,15 +10,14 @@ import Breadcrumb from './BreadCrumb';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-
 export default function RentHistory() {
 
     const intl = useIntl();
-    const title = intl.formatMessage({ id: "RentHistory_Title" })
-    const BreadcrumbMiAccount = intl.formatMessage({ id: "BreadcrumbMiAccount" })
-    const active = intl.formatMessage({ id: "RentHistory_ActiveRent" })
-    const renew = intl.formatMessage({ id: "RentHistory_RenewButton" })
-    const write = intl.formatMessage({ id: "RentHistory_WriteButton" })
+    const title = intl.formatMessage({ id: "RentHistory_Title" });
+    const BreadcrumbMiAccount = intl.formatMessage({ id: "BreadcrumbMiAccount" });
+    const active = intl.formatMessage({ id: "RentHistory_ActiveRent" });
+    const renew = intl.formatMessage({ id: "RentHistory_RenewButton" });
+    const write = intl.formatMessage({ id: "RentHistory_WriteButton" });
     const [rents, setRents] = useState([]);
 
     async function getRents() {
@@ -41,26 +41,20 @@ export default function RentHistory() {
         fetchData();
     }, []);
 
-    // Se daña cuando no hay rentas asociadas
     const exampleActiveRents = rents.filter((rent) => rent.isActive === true);
     const examplePastRents = rents.filter((rent) => rent.isActive === false);
 
-
     let activePhones = [];
-    // Se dańa cuando no hay rentas activas
     for (let i = 0; i < exampleActiveRents.length; i++) {
         const phone = JSON.parse(localStorage.getItem(`cel${exampleActiveRents[i].phone.id}`));
         activePhones.push(phone);
     }
 
     let pastPhones = [];
-    // Se dańa cuando no hay rentas pasadas
     for (let i = 0; i < examplePastRents.length; i++) {
         const phone = JSON.parse(localStorage.getItem(`cel${examplePastRents[i].phone.id}`));
         pastPhones.push(phone);
     }
-
-
 
     return (
         <>
@@ -85,7 +79,6 @@ export default function RentHistory() {
     );
 }
 
-
 const sectionStyle = {
     width: "80vw",
     margin: "auto",
@@ -97,11 +90,9 @@ const sectionStyle = {
     alignSelf: "center",
 }
 
-
 const PhonesRow = ({ phones, route, text }) => {
-
     return (
-        <Grid container spacing={3} padding={2} >
+        <Grid container spacing={3} padding={2}>
             {phones.map((phone, index) => (
                 <Grid item xs={12} sm={6} md={3} key={index}>
                     <PhoneCardSimple {...phone} cost={`$ ${phone.pricePerDay} COP / día`} route={`/products/${phone.id}/${route}`} buttonText={text} />
@@ -111,8 +102,17 @@ const PhonesRow = ({ phones, route, text }) => {
     );
 }
 
+PhonesRow.propTypes = {
+    phones: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        pricePerDay: PropTypes.number.isRequired,
+        // Add other properties of `phone` if necessary
+    })).isRequired,
+    route: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+};
 
-const SectionTitle = ({ text }) =>
+const SectionTitle = ({ text }) => (
     <Typography sx={{
         fontFamily: "Inter",
         fontStyle: "normal",
@@ -125,3 +125,15 @@ const SectionTitle = ({ text }) =>
     }}>
         {text}
     </Typography>
+);
+
+SectionTitle.propTypes = {
+    text: PropTypes.string.isRequired,
+};
+
+Breadcrumb.propTypes = {
+    breadcrumbs: PropTypes.arrayOf(PropTypes.shape({
+        href: PropTypes.string.isRequired,
+        text: PropTypes.string.isRequired,
+    })).isRequired,
+};
