@@ -54,7 +54,7 @@ const FooterColumn = ({ title, items }) =>
     <Grid item xs={12} sm={3}>
         <Title title={title}/>
         {items.map((item, index) => (
-            <Item text={item} key={index} />
+            <Item text={item} key={item} />
         ))}
     </Grid>
 

@@ -20,7 +20,6 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 export default function SignInSide() {
     const handleSubmit = (event) => {
         event.preventDefault();
-        const data = new FormData(event.currentTarget);
     };
 
     const intl = useIntl();
@@ -103,7 +102,7 @@ export default function SignInSide() {
 
         if (password === "") return intl.formatMessage({ id: "PasswordNotEmpty" });
 
-        if (!/[0-9]/.test(password)) return intl.formatMessage({ id: "PasswordContainsNumber" });
+        if (!/\d/.test(password)) return intl.formatMessage({ id: "PasswordContainsNumber" });
 
         if (!/[a-z]/.test(password)) return intl.formatMessage({ id: "PasswordContainsLowercase" });
 

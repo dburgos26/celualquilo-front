@@ -156,7 +156,7 @@ const SpecList = ({ specs }) => {
     return (
         <List>
             {specs.map((spec, index) => (
-                <ListItem key={index} sx={{ display: 'grid', gridTemplateColumns: 'auto 1fr' }}>
+                <ListItem key={spec} sx={{ display: 'grid', gridTemplateColumns: 'auto 1fr' }}>
                     <ListItemIcon>
                         <CheckIcon />
                     </ListItemIcon>

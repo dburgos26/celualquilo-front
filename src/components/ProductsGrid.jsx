@@ -40,10 +40,6 @@ export default function ProductsGrid({ titleText }) {
     const intl = useIntl();
     const ProductsList_OurProducts = intl.formatMessage({ id: 'ProductsList_OurProducts' });
 
-    const ProductsList_LablelPopular = intl.formatMessage({ id: 'ProductsList_LablelPopular' });
-    const ProductsList_LablelLastGen = intl.formatMessage({ id: 'ProductsList_LablelLastGen' });
-    const ProductsList_LablelDiscount = intl.formatMessage({ id: 'ProductsList_LablelDiscount' });
-
     let titulo = ""
 
     if (titleText === "Nuestros Productos") {
