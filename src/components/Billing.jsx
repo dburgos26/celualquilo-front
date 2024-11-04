@@ -11,6 +11,8 @@ import PriceDetails from './PriceDetails';
 import Box from '@mui/material/Box';
 import { Link, useParams } from 'react-router-dom';
 import Breadcrumb from './BreadCrumb';
+import PropTypes from 'prop-types';
+
 
 export default function Billing() {
     const intl = useIntl();
@@ -285,3 +287,35 @@ const PayingMethod = ({ efectivo, tarjeta }) => {
   };
 
 
+RentButton.propTypes = {
+    text: PropTypes.string.isRequired,
+    isDisabled: PropTypes.bool,
+};
+
+BillingAddress.propTypes = {
+    direccion: PropTypes.string.isRequired,
+    ciudad: PropTypes.string.isRequired,
+    numeroContacto: PropTypes.string.isRequired,
+    error1: PropTypes.string.isRequired,
+    error2: PropTypes.string.isRequired,
+    noNumbers: PropTypes.string.isRequired,
+    moreThanOneLetter: PropTypes.string.isRequired,
+    error3: PropTypes.string.isRequired,
+    zeros: PropTypes.string.isRequired,
+    ones: PropTypes.string.isRequired,
+    twos: PropTypes.string.isRequired,
+    threes: PropTypes.string.isRequired,
+    fours: PropTypes.string.isRequired,
+    fives: PropTypes.string.isRequired,
+    six: PropTypes.string.isRequired,
+    sevens: PropTypes.string.isRequired,
+    eights: PropTypes.string.isRequired,
+    nines: PropTypes.string.isRequired,
+    tenDigits: PropTypes.string.isRequired,
+    isDisabledFunction: PropTypes.func.isRequired,
+};
+
+PayingMethod.propTypes = {
+    efectivo: PropTypes.string.isRequired,
+    tarjeta: PropTypes.string.isRequired,
+};
