@@ -20,10 +20,14 @@ import { useParams } from 'react-router';
 import GoBack from './GoBack';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 
 const moneda = "USD"
 
+PhoneDetail.propTypes = {
+    idCel1: PropTypes.number
+}
 
 export default function PhoneDetail({ idCel1 }) {
 
