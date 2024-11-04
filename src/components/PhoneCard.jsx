@@ -11,6 +11,13 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
 
+PhoneCard.propTypes = {
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    cost: PropTypes.number.isRequired,
+    rating: PropTypes.number.isRequired,
+    phoneId: PropTypes.string.isRequired,
+};
 
 export default function PhoneCard({ name, image, cost, rating, phoneId }) {
 
@@ -141,7 +148,10 @@ const nameStyle = {
     fontWeight: "bold",
 }
 
-
+LastButton.propTypes = {
+    text: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+};
 
 const LastButton = ({ text, link }) =>
     <Link to={link}>
@@ -158,6 +168,11 @@ const LastButton = ({ text, link }) =>
             variant="contained"
         >{text}</Button>
     </Link>;
+
+MediaRatio.propTypes = {
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+};
 
 
 const MediaRatio = ({ image, name }) =>

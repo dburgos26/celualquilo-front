@@ -8,6 +8,14 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import { Link } from 'react-router-dom';
 
+PhoneCardSimple.propTypes = {
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    cost: PropTypes.number.isRequired,
+    buttonText: PropTypes.string,
+    route: PropTypes.string.isRequired,
+};
+
 
 export default function PhoneCardSimple({ name, image, cost, buttonText, route }) {
     return (
@@ -65,6 +73,11 @@ const nameStyle = {
     fontWeight: "bold",
 }
 
+LastButton.propTypes = {
+    text: PropTypes.string.isRequired,
+    route: PropTypes.string.isRequired,
+};
+
 
 
 const LastButton = ({ text, route }) => <>
@@ -83,6 +96,11 @@ const LastButton = ({ text, route }) => <>
     </Link>
 </>
 
+
+MediaRatio.propTypes = {
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+};
 
 const MediaRatio = ({ image, name }) =>
     <Box sx={{

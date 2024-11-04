@@ -4,6 +4,11 @@ import { Typography } from '@mui/material';
 import Toolbar from '@mui/material/Toolbar';
 import { Link } from 'react-router-dom';
 
+GoBack.propTypes = {
+    text: PropTypes.string.isRequired,
+    route: PropTypes.string.isRequired,
+};
+
 
 export default function GoBack({ text, route }) {
     return (

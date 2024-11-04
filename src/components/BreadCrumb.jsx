@@ -4,6 +4,15 @@ import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 import Toolbar from '@mui/material/Toolbar';
 
+Breadcrumb.propTypes = {
+    breadcrumbs: PropTypes.arrayOf(
+        PropTypes.shape({
+            text: PropTypes.string.isRequired,
+            href: PropTypes.string.isRequired,
+        })
+    ).isRequired,
+};
+
 export default function Breadcrumb({ breadcrumbs }) {
 
     const breadcrumbItems = breadcrumbs.map((breadcrumb, index) => (
