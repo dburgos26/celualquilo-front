@@ -25,9 +25,9 @@ const cardStyle = {
 }
 
 PriceDetails.propTypes = {
-    dias: PropTypes.number,
-    price_per_day: PropTypes.number
-}
+    dias: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    price_per_day: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+};
 
 export default function PriceDetails(props) {
     const dias = props.dias <= 180 ? props.dias : 180
