@@ -226,7 +226,7 @@ const PhonesRow = ({ phones }) => {
                 const buttonText = intl.formatMessage({ id: "Rent" })
 
                 return (
-                <Grid item xs={12} sm={6} md={3} key={index}>
+                <Grid item xs={12} sm={6} md={3} key={phone.id}>
                     <PhoneCardSimple name={phone.name} image={phone.image} cost={phone.pricePerDay} buttonText={buttonText} days={8} route={buttonLink} />
                 </Grid>
             )})}
@@ -245,7 +245,7 @@ const BrandsRow = ({ brands }) => {
     return (
         <Grid container spacing={2} padding={4}>
             {brands.map((brand, index) => (
-                <Grid item xs={12} sm={6} md={3} key={index} style={brandItemStyle}>
+                <Grid item xs={12} sm={6} md={3} key={brand.name} style={brandItemStyle}>
                     <Nav.Link style={{ textDecoration: 'none' }} href={"/" + brand.name}>
                         <img src={brand.image} alt={brand.name} style={{ maxWidth: "200px" }} />
                     </Nav.Link>

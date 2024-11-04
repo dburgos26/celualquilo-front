@@ -28,8 +28,7 @@ export default function Favourites() {
         });
         const data = await response.json();
         let newFavouriteList = [];
-        for (let i = 0; i < data.favorites.length; i++) {
-            let phone = data.favorites[i];
+        for (let phone of data.favorites) {
             let newPhone ={
                 name: phone.name,
                 days: "5 días de alquiler",
@@ -70,7 +69,7 @@ const PhonesRow = ({ phones, rent }) => {
     return (
         <Grid container spacing={3} padding={2} >
             {phones.map((phone, index) => (
-                <Grid item xs={12} sm={6} md={3} key={index}>
+                <Grid item xs={12} sm={6} md={3} key={phone.name}>
                     <PhoneCardSimple {...phone} route={`/products/${1}/rent`} buttonText={rent}/>
                 </Grid>
             ))}

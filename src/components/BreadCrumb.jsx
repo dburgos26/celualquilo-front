@@ -19,7 +19,7 @@ export default function Breadcrumb({ breadcrumbs }) {
     const breadcrumbItems = breadcrumbs.map((breadcrumb, index) => (
         index < breadcrumbs.length - 1 ? (
             <Link
-                key={index}
+                key={breadcrumb.href}
                 underline="hover"
                 color="inherit"
                 to={breadcrumb.href}
@@ -27,7 +27,7 @@ export default function Breadcrumb({ breadcrumbs }) {
                 {breadcrumb.text}
             </Link>
         ) : (
-            <Typography key={index} color="text.primary">
+            <Typography key={breadcrumb.href} color="text.primary">
                 {breadcrumb.text}
             </Typography>
         )

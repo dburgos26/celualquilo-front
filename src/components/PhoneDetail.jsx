@@ -157,7 +157,7 @@ const SpecList = ({ specs }) => {
     return (
         <List>
             {specs.map((spec, index) => (
-                <ListItem key={index} sx={{ display: 'grid', gridTemplateColumns: 'auto 1fr' }}>
+                <ListItem key={spec} sx={{ display: 'grid', gridTemplateColumns: 'auto 1fr' }}>
                     <ListItemIcon>
                         <CheckIcon />
                     </ListItemIcon>
@@ -199,8 +199,8 @@ const CommentArea = ({reviews}) => <Stack spacing={1.3}>
 
 const UserReviews = ({reviews}) =>
     <Stack spacing={3}>
-        {reviews.map((review, index) => (
-            <Card key={index} sx={{ textAlign: 'left' }}>
+        {reviews.map((review) => (
+            <Card key={review.id} sx={{ textAlign: 'left' }}>
                 <CardContent>
                     <Typography variant="h6" color="text.primary" >
                         {review.titulo}

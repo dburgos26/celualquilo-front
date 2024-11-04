@@ -24,7 +24,6 @@ test('name is not empty', () => {
         <CreateAccount />
     </BrowserRouter>, "en", messages);
     const name = screen.getByTestId("name");
-    const nameInput = name.querySelector('input');
     fireEvent.click(name);
     const nameEmpty = screen.getByTestId("nameError");
     expect(nameEmpty).toHaveTextContent(messages["No_Empty_Name"]);

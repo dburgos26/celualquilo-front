@@ -43,14 +43,14 @@ export default function RentHistory() {
     const examplePastRents = rents.filter((rent) => rent.isActive === false);
 
     let activePhones = [];
-    for (let i = 0; i < exampleActiveRents.length; i++) {
-        const phone = JSON.parse(localStorage.getItem(`cel${exampleActiveRents[i].phone.id}`));
+    for (const rent of exampleActiveRents) {
+        const phone = JSON.parse(localStorage.getItem(`cel${rent.phone.id}`));
         activePhones.push(phone);
     }
 
     let pastPhones = [];
-    for (let i = 0; i < examplePastRents.length; i++) {
-        const phone = JSON.parse(localStorage.getItem(`cel${examplePastRents[i].phone.id}`));
+    for (const rent of examplePastRents) {
+        const phone = JSON.parse(localStorage.getItem(`cel${rent.phone.id}`));
         pastPhones.push(phone);
     }
 
@@ -92,7 +92,7 @@ const PhonesRow = ({ phones, route, text }) => {
     return (
         <Grid container spacing={3} padding={2}>
             {phones.map((phone, index) => (
-                <Grid item xs={12} sm={6} md={3} key={index}>
+                <Grid item xs={12} sm={6} md={3} key={phone.id}>
                     <PhoneCardSimple {...phone} cost={`$ ${phone.pricePerDay} COP / día`} route={`/products/${phone.id}/${route}`} buttonText={text} />
                 </Grid>
             ))}

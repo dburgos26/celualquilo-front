@@ -27,7 +27,7 @@ function FilterSection({ filtros, setFiltros }) {
     };
 
     const handleChange = (event) => {
-        const { name, value, checked } = event.target;
+        const { name, value } = event.target;
         if (name === 'PrecioMin') {
             setFiltros({ ...filtros, PrecioMin: value });
         } else if (name === 'PrecioMax') {
