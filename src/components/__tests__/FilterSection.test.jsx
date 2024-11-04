@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
-import { IntlProvider } from 'react-intl';
+import React from 'react';
+import { fireEvent, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import FilterSection from '../FiltersSection';
 import '@testing-library/jest-dom';

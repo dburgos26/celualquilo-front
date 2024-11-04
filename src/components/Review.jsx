@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useIntl } from "react-intl";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -15,18 +16,18 @@ import MenuItem from '@mui/joy/MenuItem';
 import ListItemDecorator from '@mui/joy/ListItemDecorator';
 import FormatBold from '@mui/icons-material/FormatBold';
 import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
-import Check from '@mui/icons-material/Check';
+import CheckIcon from '@mui/icons-material/Check';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import ListItem from '@mui/material/ListItem';
 import List from '@mui/material/List';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import CheckIcon from '@mui/icons-material/Check';
 import Stack from '@mui/material/Stack';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import GoBack from './GoBack';
 import { useParams } from 'react-router-dom';
+
 
 
 export default function Review() {
@@ -70,7 +71,6 @@ export default function Review() {
 
         if (idReview === undefined) {
             alert(errorPublishingReview);
-            return;
         } else {
 
             await fetch(`http://localhost:3000/api/v1/phones/${idCel}/reviews/${idReview}`, {
@@ -138,13 +138,8 @@ export default function Review() {
     );
 }
 
-
-
-
-
 const cardStyle = {
     width: "80vw",
-    // centered
     alignContent: "center",
     alignItems: "center",
     justifyContent: "center",
@@ -155,8 +150,7 @@ const cardStyle = {
     borderRadius: "15px",
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
     alignSelf: "center",
-}
-
+};
 
 const SpecList = ({ specs }) => {
     return (
@@ -173,38 +167,48 @@ const SpecList = ({ specs }) => {
             ))}
         </List>
     );
-}
+};
 
+SpecList.propTypes = {
+    specs: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 const PublishReviewButton = ({ text, postReview }) => {
-    return <Button
-        style={{
-            borderRadius: 20,
-            padding: "5px 20px",
-            backgroundColor: COLORS.primary,
-            fontSize: "18px",
-            textTransform: "none",
-            color: "white",
-        }}
-        variant="contained"
-        onClick={postReview}
-    >{text}</Button>;
-}
+    return (
+        <Button
+            style={{
+                borderRadius: 20,
+                padding: "5px 20px",
+                backgroundColor: COLORS.primary,
+                fontSize: "18px",
+                textTransform: "none",
+                color: "white",
+            }}
+            variant="contained"
+            onClick={postReview}
+        >
+            {text}
+        </Button>
+    );
+};
 
+PublishReviewButton.propTypes = {
+    text: PropTypes.string.isRequired,
+    postReview: PropTypes.func.isRequired,
+};
 
 const CommentArea = ({ setRating, setText, postReview }) => {
     const [fontWeight, setFontWeight] = React.useState('normal');
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const intl = useIntl();
-
     const tellOp = intl.formatMessage({ id: 'Review_TellOpinion' });
     const btt = intl.formatMessage({ id: 'Review_publichBttn' });
     const inputFil = intl.formatMessage({ id: 'Review_InputFiller' });
 
-    const handelText = (event) => {
+    const handleText = (event) => {
         setText(event.target.value);
-    }
+    };
 
     return (
         <FormControl>
@@ -217,11 +221,13 @@ const CommentArea = ({ setRating, setText, postReview }) => {
                         lineHeight: '22px',
                         color: '#202020',
                     }}
-                >{tellOp}</FormLabel>
+                >
+                    {tellOp}
+                </FormLabel>
                 <RatingStars setRevrating={setRating} />
                 <Textarea
                     placeholder={inputFil}
-                    onChange={handelText}
+                    onChange={handleText}
                     minRows={3}
                     endDecorator={
                         <Box
@@ -262,7 +268,7 @@ const CommentArea = ({ setRating, setText, postReview }) => {
                                         sx={{ fontWeight: weight }}
                                     >
                                         <ListItemDecorator>
-                                            {fontWeight === weight && <Check fontSize="sm" />}
+                                            {fontWeight === weight && <CheckIcon fontSize="sm"/>}
                                         </ListItemDecorator>
                                         {weight === '200' ? 'lighter' : weight}
                                     </MenuItem>
@@ -279,4 +285,10 @@ const CommentArea = ({ setRating, setText, postReview }) => {
             </Stack>
         </FormControl>
     );
-}
+};
+
+CommentArea.propTypes = {
+    setRating: PropTypes.func.isRequired,
+    setText: PropTypes.func.isRequired,
+    postReview: PropTypes.func.isRequired,
+};

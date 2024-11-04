@@ -1,9 +1,7 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
-import { IntlProvider } from 'react-intl';
+import { screen, fireEvent } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import SignIn from '../SignIn';
-import Visibility from '@mui/icons-material/Visibility';
 import '@testing-library/jest-dom'
 
 import { renderWithReactIntl, getMessages } from '../TestHelper';
