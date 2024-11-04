@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FormattedMessage, useIntl } from "react-intl";
 import Card from '@mui/material/Card';
 import Rating from '@mui/material/Rating';
@@ -19,7 +19,6 @@ import { useTheme } from '@mui/material/styles';
 import { useParams } from 'react-router';
 import GoBack from './GoBack';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 

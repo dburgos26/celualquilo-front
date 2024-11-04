@@ -1,4 +1,3 @@
-import React from 'react';
 import { useIntl } from "react-intl";
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
@@ -7,10 +6,9 @@ import Button from '@mui/material/Button';
 import { COLORS } from '../styles/colors';
 import { Box, TextField } from "@mui/material";
 import PriceDetails from './PriceDetails';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { React, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import Breadcrumb from './BreadCrumb';
-import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const moneda = "COP"

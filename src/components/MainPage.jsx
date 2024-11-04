@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useIntl } from "react-intl";
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
@@ -18,8 +18,6 @@ import RentButton from './RentButton';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import { Nav } from 'react-bootstrap';
-import { useEffect } from 'react';
-import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 

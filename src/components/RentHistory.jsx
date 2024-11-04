@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useIntl } from "react-intl";
 import Card from '@mui/material/Card';
@@ -7,8 +7,6 @@ import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import PhoneCardSimple from './PhoneCardSimple';
 import Breadcrumb from './BreadCrumb';
-import { useState } from 'react';
-import { useEffect } from 'react';
 
 export default function RentHistory() {
 
