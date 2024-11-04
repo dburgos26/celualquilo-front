@@ -3,6 +3,11 @@ import Container from '@mui/material/Container';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
+import PropTypes from 'prop-types';
+
+SearchBar.propTypes = {
+    text: PropTypes.string
+}
 
 export const SearchBar = ({ text }) => {
     const [searchTerm, setSearchTerm] = useState('');

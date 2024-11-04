@@ -4,6 +4,8 @@ import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
+import PropTypes from 'prop-types';
+
 
 const moneda = "COP"
 
@@ -20,6 +22,11 @@ const cardStyle = {
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
     alignSelf: "center",
     padding: "30px",
+}
+
+PriceDetails.propTypes = {
+    dias: PropTypes.number,
+    price_per_day: PropTypes.number
 }
 
 export default function PriceDetails(props) {
