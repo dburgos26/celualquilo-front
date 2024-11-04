@@ -111,7 +111,6 @@ const cardStyle = {
 const RentButton = ({ text, isDisabled }) => {
 
     return (
-        <>
             < Button
                 style={{
                     borderRadius: 20,
@@ -125,7 +124,6 @@ const RentButton = ({ text, isDisabled }) => {
 
                 variant="contained"
             > {text}</Button >
-        </>
     )
 }
 
