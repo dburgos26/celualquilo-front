@@ -11,6 +11,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Breadcrumb from './BreadCrumb';
 import { useParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const moneda = "COP"
 const maxDiasAlquiler = 180
@@ -148,3 +149,20 @@ const PhoneResume = ({ dias, setDias, phoneName, phonePrice, phoneImg, label, er
 
     </Card>)
 }
+
+RentButton.propTypes = {
+    text: PropTypes.string.isRequired,
+    isDisabled: PropTypes.bool,
+};
+
+PhoneResume.propTypes = {
+    dias: PropTypes.string.isRequired,
+    setDias: PropTypes.func.isRequired,
+    phoneName: PropTypes.string.isRequired,
+    phonePrice: PropTypes.string.isRequired,
+    phoneImg: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    error1: PropTypes.string.isRequired,
+    error2: PropTypes.string.isRequired,
+    isGood: PropTypes.func.isRequired,
+};

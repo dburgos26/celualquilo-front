@@ -12,7 +12,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import HamburgerMenu from './HamburguerMenu';
 import { Nav } from 'react-bootstrap';
 import { SearchBar } from './SearchBar';
-
+import PropTypes from 'prop-types';
 
 export default function Header() {
     const theme = useTheme();
@@ -127,3 +127,7 @@ const LoginButton = ({ text, link }) => {
     )
 }
 
+LoginButton.propTypes = {
+    text: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+};

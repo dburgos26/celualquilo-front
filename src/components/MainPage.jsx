@@ -20,6 +20,7 @@ import { useTheme } from '@mui/material/styles';
 import { Nav } from 'react-bootstrap';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 
 const brands = [
@@ -290,3 +291,37 @@ const buttonStyle = {
     textTransform: "none",
     fontFamily: "Open Sans",
 }
+
+MainImageText.propTypes = {
+    osm: PropTypes.shape({
+        osm: PropTypes.bool.isRequired,
+    }).isRequired,
+};
+
+BrandsTitleStyle.propTypes = {
+    text: PropTypes.string.isRequired,
+};
+
+PhonesRow.propTypes = {
+    phones: PropTypes.arrayOf(PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+        cost: PropTypes.number.isRequired,
+        id: PropTypes.number.isRequired,
+    })).isRequired,
+};
+
+BrandsRow.propTypes = {
+    brands: PropTypes.arrayOf(PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+    })).isRequired,
+};
+
+SectionTitle.propTypes = {
+    text: PropTypes.string.isRequired,
+};
+
+SeeAllButtom.propTypes = {
+    text: PropTypes.string.isRequired,
+};

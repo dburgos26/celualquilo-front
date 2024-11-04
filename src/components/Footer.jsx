@@ -6,6 +6,7 @@ import Copyright from "./Copyright"
 import { Box } from "@mui/material";
 import { COLORS } from "../styles/colors";
 import { useIntl } from "react-intl";
+import PropTypes from "prop-types";
 
 
 export default function Footer() {
@@ -75,3 +76,16 @@ const Item = ({ text }) =>
     }}>
         {text}
     </Typography>
+
+FooterColumn.propTypes = {
+    title: PropTypes.string.isRequired,
+    items: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
+
+Title.propTypes = {
+    title: PropTypes.string.isRequired,
+};
+
+Item.propTypes = {
+    text: PropTypes.string.isRequired,
+};

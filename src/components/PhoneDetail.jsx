@@ -222,3 +222,32 @@ const UserReviews = ({reviews}) =>
             </Card>
         )).reverse()}
     </Stack>
+
+
+PhoneDetail.propTypes = {
+    idCel1: PropTypes.number,
+};
+
+SpecList.propTypes = {
+    specs: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
+
+RentButton.propTypes = {
+    text: PropTypes.string.isRequired,
+};
+
+CommentArea.propTypes = {
+    reviews: PropTypes.arrayOf(PropTypes.shape({
+        titulo: PropTypes.string.isRequired,
+        text: PropTypes.string.isRequired,
+        rating: PropTypes.number.isRequired,
+    })).isRequired,
+};
+
+UserReviews.propTypes = {
+    reviews: PropTypes.arrayOf(PropTypes.shape({
+        titulo: PropTypes.string.isRequired,
+        text: PropTypes.string.isRequired,
+        rating: PropTypes.number.isRequired,
+    })).isRequired,
+};
