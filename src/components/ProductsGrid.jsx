@@ -193,6 +193,11 @@ const FilterButtons = ({ selectedButton, handleButtonClick }) => {
     );
 };
 
+FilterButtons.propTypes = {
+    selectedButton: PropTypes.string,
+    handleButtonClick: PropTypes.func.isRequired,
+};
+
 const FilterButton = ({ text, selected, onClick }) => {
 
     const filterButtonStyle = {
@@ -234,6 +239,12 @@ const FilterButton = ({ text, selected, onClick }) => {
     );
 };
 
+FilterButton.propTypes = {
+    text: PropTypes.string.isRequired,
+    selected: PropTypes.bool.isRequired,
+    onClick: PropTypes.func.isRequired,
+};
+
 
 const Title = ({ titleText }) =>
     <div style={centerStyle}>
@@ -242,6 +253,9 @@ const Title = ({ titleText }) =>
         </Typography>
     </div>
 
+Title.propTypes = {
+    titleText: PropTypes.string.isRequired,
+};
 
 const centerStyle = {
     display: 'flex',
