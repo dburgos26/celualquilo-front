@@ -1,5 +1,12 @@
 import React from 'react';
 import Pagination from '@mui/material/Pagination';
+import PropTypes from 'prop-types';
+
+PaginationRounded.propTypes = {
+    setCurrentPage: PropTypes.func.isRequired,
+    totalElements: PropTypes.number.isRequired,
+    itemsPerPage: PropTypes.number.isRequired,
+};
 
 export default function PaginationRounded({ setCurrentPage, totalElements, itemsPerPage }) {
     return (

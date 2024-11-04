@@ -3,6 +3,12 @@ import { COLORS } from '../styles/colors';
 import { Typography } from '@mui/material';
 import Toolbar from '@mui/material/Toolbar';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
+GoBack.propTypes = {
+    text: PropTypes.string.isRequired,
+    route: PropTypes.string.isRequired,
+};
 
 
 export default function GoBack({ text, route }) {

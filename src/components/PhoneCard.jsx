@@ -10,7 +10,15 @@ import Button from '@mui/material/Button';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
+PhoneCard.propTypes = {
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    cost: PropTypes.number.isRequired,
+    rating: PropTypes.number.isRequired,
+    phoneId: PropTypes.string.isRequired,
+};
 
 export default function PhoneCard({ name, image, cost, rating, phoneId }) {
 
@@ -160,6 +168,8 @@ const LastButton = ({ text, link }) =>
     </Link>;
 
 
+
+
 const MediaRatio = ({ image, name }) =>
     <Box sx={{
         p: 1
@@ -176,3 +186,13 @@ const MediaRatio = ({ image, name }) =>
             />
         </AspectRatio>
     </Box>
+
+LastButton.propTypes = {
+    text: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+};
+
+MediaRatio.propTypes = {
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+};
