@@ -11,7 +11,12 @@ import { COLORS } from "../styles/colors";
 import { useState, useEffect } from 'react';
 import FilterSection from './FiltersSection';
 import { useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
+
+ProductsGrid.propTypes = {
+    titleText: PropTypes.string
+}
 
 export default function ProductsGrid({ titleText }) {
 

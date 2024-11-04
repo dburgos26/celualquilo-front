@@ -3,6 +3,11 @@ import { useIntl } from "react-intl";
 import Rating from '@mui/material/Rating';
 import Box from '@mui/material/Box';
 import StarIcon from '@mui/icons-material/Star';
+import PropTypes from 'prop-types';
+
+HoverRating.propTypes = {
+    setRevrating: PropTypes.func
+}
 
 export default function HoverRating({ setRevrating }) {
 
