@@ -6,6 +6,7 @@ import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import PhoneCardSimple from './PhoneCardSimple';
 import Breadcrumb from './BreadCrumb';
+import PropTypes from 'prop-types';
 
 
 export default function Favourites() {
@@ -102,3 +103,18 @@ const SectionTitle = ({ text }) =>
     }}>
         {text}
     </Typography>
+
+PhonesRow.propTypes = {
+    phones: PropTypes.arrayOf(PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+        cost: PropTypes.string.isRequired,
+        buttonText: PropTypes.string,
+        route: PropTypes.string.isRequired,
+    })).isRequired,
+    rent: PropTypes.string.isRequired,
+};
+
+SectionTitle.propTypes = {
+    text: PropTypes.string.isRequired,
+};

@@ -75,7 +75,7 @@ const nameStyle = {
 }
 
 
-const LastButton = ({ text, route }) => <>
+const LastButton = ({ text, route }) => 
     <Link to={route}>
         <Button
             style={{
@@ -89,7 +89,7 @@ const LastButton = ({ text, route }) => <>
             variant="contained"
         >{text}</Button>
     </Link>
-</>
+
 
 
 

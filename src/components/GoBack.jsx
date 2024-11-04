@@ -13,7 +13,7 @@ GoBack.propTypes = {
 
 export default function GoBack({ text, route }) {
     return (
-        <>
+        
             <Link to={route} style={{ textDecoration: 'none' }}>
                 <Toolbar sx={{
                     alignItems: 'flex-start',
@@ -39,7 +39,7 @@ export default function GoBack({ text, route }) {
                     >{text}</Typography>
                 </Toolbar>
             </Link>
-        </>
+        
     );
 }
 
