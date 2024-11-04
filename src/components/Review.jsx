@@ -16,7 +16,7 @@ import MenuItem from '@mui/joy/MenuItem';
 import ListItemDecorator from '@mui/joy/ListItemDecorator';
 import FormatBold from '@mui/icons-material/FormatBold';
 import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
-import Check from '@mui/icons-material/Check';
+import CheckIcon from '@mui/icons-material/Check';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import ListItem from '@mui/material/ListItem';
@@ -27,6 +27,8 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import GoBack from './GoBack';
 import { useParams } from 'react-router-dom';
+
+
 
 export default function Review() {
     const theme = useTheme();
@@ -266,7 +268,7 @@ const CommentArea = ({ setRating, setText, postReview }) => {
                                         sx={{ fontWeight: weight }}
                                     >
                                         <ListItemDecorator>
-                                            {fontWeight === weight && <Check fontSize="sm" />}
+                                            {fontWeight === weight && <CheckIcon fontSize="sm"/>}
                                         </ListItemDecorator>
                                         {weight === '200' ? 'lighter' : weight}
                                     </MenuItem>
